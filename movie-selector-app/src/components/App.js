@@ -1,37 +1,21 @@
-import { useState } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import MovieList from './movies/MovieList';
+import Navigation from './movies/Navigation';
+import Search from './movies/Search';
+import WishList from './movies/WishList';
 
 const App = () => {
-	const [searchTerm, setSearchTerm] = useState('');
-	
-	const onSubmit = e => {
-		e.preventDefault();
-		setSearchTerm(e.target.value);
-		return <MovieList searchTerm={searchTerm}/>
-	}
   return (
     <>
-      <header>
-        <div className="navi-bar">
-          <div className="menu">
-            <div>home</div>
-            <div>wish list</div>
-          </div>
-          <div className="search">
-            <form onSubmit={onSubmit}>
-							<input type="text" />
-						</form>
-          </div>
+      <BrowserRouter>
+        <Navigation />
+        <div className="content">
+          <Route path="/" exact component={MovieList}>
+            <Search />
+          </Route>
+          <Route path="/wishList" exact component={WishList} />
         </div>
-      </header>
-      <div>
-        <BrowserRouter>
-          <div>
-            <Route path="/" exact component={MovieList}></Route>
-          </div>
-        </BrowserRouter>
-      </div>
+      </BrowserRouter>
     </>
   );
 };
