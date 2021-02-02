@@ -8,7 +8,7 @@ const Navigation = () => {
         <div className="navi-bar">
           <div className="menu">
             <div>
-              <Link to="/">home</Link>
+              <Link to="/">search</Link>
             </div>
             <div>
               <Link to="/wishList">wish list</Link>

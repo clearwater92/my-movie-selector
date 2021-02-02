@@ -4,8 +4,12 @@ import { SEARCH_API, JSON_SERVER_URL } from '../constants';
 
 // 액션 타입
 const SEARCH_MOVIES = 'SEARCH_MOVIES';
+const SEARCH_MOVIE = 'SEARCH_MOVIE';
 const LIKE_MOVIE = 'LIKE_MOVIE';
 const FETCH_WISH_LIST = 'FETCH_WISH_LIST';
+const DELETE_WISH_LIST = 'DELETE_WISH_LIST';
+
+const wishList = axios.create({ baseURL: JSON_SERVER_URL });
 
 // 액션 생성 함수
 export const searchMovies = (searchTerm) => async (dispatch) => {
@@ -15,18 +19,19 @@ export const searchMovies = (searchTerm) => async (dispatch) => {
 
 export const likeMovie = (movie) => async (dispatch) => {
   console.log('movie', movie);
-  const response = await axios
-    .create({ baseURL: JSON_SERVER_URL })
-    .post('/wishList', { ...movie });
+  const response = await wishList.post('/wishList', { ...movie });
   console.log(response);
   dispatch({ type: LIKE_MOVIE, payload: response.data });
 };
 
 export const fetchWishList = () => async (dispatch) => {
-  const response = await axios
-    .create({ baseURL: JSON_SERVER_URL })
-    .get('/wishList');
+  const response = await wishList.get('/wishList');
   dispatch({ type: FETCH_WISH_LIST, payload: response.data });
+};
+
+export const deleteMovie = (id) => async (dispatch) => {
+  await wishList.delete(`/wishList/${id}`);
+  dispatch({ type: DELETE_WISH_LIST, payload: id });
 };
 
 export const tmdbReducer = (state = {}, action) => {
@@ -46,6 +51,8 @@ export const wishListReducer = (state = {}, action) => {
       return { ...state, [action.payload.id]: action.payload };
     case FETCH_WISH_LIST:
       return { ...state, ..._.mapKeys(action.payload, 'id') };
+    case DELETE_WISH_LIST:
+      return _.omit(state, action.payload);
     default:
       return state;
   }

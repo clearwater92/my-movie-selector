@@ -8,7 +8,7 @@ import MovieList from './MovieList';
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const dispatch = useDispatch();
-  const { searchedMovies } = useSelector((state) => ({
+  const { searchedMovies } = useSelector(state => ({
     searchedMovies: state.movies,
   }));
 

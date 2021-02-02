@@ -1,59 +1,46 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import _ from 'lodash';
-import { fetchWishList } from '../../modules/movie';
+import { FaTrashAlt } from 'react-icons/fa';
 import { IMAGE_BASE_URL, IMAGE_NOT_PREPARED } from '../../constants';
+import { deleteMovie } from '../../modules/movie';
 
-const WishList = () => {
-  const { movieList } = useSelector((state) => ({
-    movieList: state.wishList,
-  }));
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchWishList());
-	}, []);
-	
-
-
-  let wishListFlag = _.size(movieList) > 0 ? true : false;
-  console.log('movieList', movieList);
+const WishList = (props) => {
+  let movies = props.movies;
   return (
-    <div className="movie-container">
-      {wishListFlag && <Wish movieList={movieList} />}
-    </div>
+    <>
+      <div className="movie-container">
+        {_.map(movies, (movie) => (
+          <Wish key={movie.id} {...movie} />
+        ))}
+      </div>
+    </>
   );
 };
 
-const Wish = ({ movieList }) => {
+const Wish = (props) => {
+  const dispatch = useDispatch();
 
-	const { list } = useSelector((state) => ({
-    list: state.wishList,
-  }));
-	const remove = () => {
-		console.log()
-	}
+  const remove = () => {
+    dispatch(deleteMovie(props.id));
+  };
 
   return (
-    <>
-      {_.map(movieList, (movie) => (
-        <div className="movie" key={movie.id}>
-          <img
-            alt={movie.original_title}
-            src={
-              movie.backdrop_path
-                ? `${IMAGE_BASE_URL}${movie.backdrop_path}`
-                : IMAGE_NOT_PREPARED
-            }
-          />
-          <div className="movie-info">
-            <h3>{movie.original_title}</h3>
-            <button onClick={remove}>Remove</button>
-          </div>
-        </div>
-      ))}
-    </>
+    <div className="movie">
+      <img
+        alt={props.original_title}
+        src={
+          props.backdrop_path
+            ? `${IMAGE_BASE_URL}${props.backdrop_path}`
+            : IMAGE_NOT_PREPARED
+        }
+      />
+      <div className="movie-info">
+        <h3>{props.original_title}</h3>
+        <FaTrashAlt className="remove-icon" onClick={remove}>
+          Remove
+        </FaTrashAlt>
+      </div>
+    </div>
   );
 };
 

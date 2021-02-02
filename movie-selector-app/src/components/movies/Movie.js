@@ -1,4 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { FaInfoCircle, FaHeart } from 'react-icons/fa';
 import { likeMovie } from '../../modules/movie';
 import { IMAGE_BASE_URL, IMAGE_NOT_PREPARED } from '../../constants';
 
@@ -25,7 +27,14 @@ const Movie = (props) => {
       />
       <div className="movie-info">
         <h3>{props.original_title}</h3>
-        <button onClick={like}>Like</button>
+        <div className="icon-set">
+          <Link to={`/movie/${props.id}`}>
+            <FaInfoCircle className="info-icon" />
+          </Link>
+          <FaHeart className="like-icon"
+            onClick={like}
+          />
+        </div>
       </div>
     </div>
   );
