@@ -1,3 +1,4 @@
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { IMAGE_BASE_URL, IMAGE_NOT_PREPARED } from '../../constants';
 
@@ -5,9 +6,18 @@ const Detail = (props) => {
   const { movies } = useSelector((state) => ({
     movies: state.movies,
   }));
-  console.log(props.match.params.id);
   const movie = movies[props.match.params.id];
   console.log(movie);
+
+  const setVoteClass = (vote) => {
+    if (vote >= 8) {
+      return 'green';
+    } else if (vote >= 6) {
+      return 'orange';
+    } else {
+      return 'red';
+    }
+  };
   return (
     <div className="detail">
       <img
@@ -18,9 +28,14 @@ const Detail = (props) => {
             : IMAGE_NOT_PREPARED
         }
       />
-      <div className="movie-info">
-        <h3>{movie.original_title}</h3>
-				<h5>{movie.overview}</h5>
+      <div className="movie-detail">
+        <div className="movie-detail__title">{movie.original_title}</div>
+        <div className="movie-detail__release">{movie.release_date}</div>
+        <p className="movie-detail__overview">{movie.overview}</p>
+				<FaArrowAltCircleLeft className="back" />
+        <span className={`tag ${setVoteClass(movie.vote_average)}`}>
+          {movie.vote_average}
+        </span>
       </div>
     </div>
   );
