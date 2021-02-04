@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FaInfoCircle, FaHeart } from 'react-icons/fa';
@@ -5,6 +6,7 @@ import { likeMovie } from '../../modules/movie';
 import { IMAGE_BASE_URL, IMAGE_NOT_PREPARED } from '../../constants';
 
 const Movie = (props) => {
+
   const { wishList } = useSelector((state) => ({
     wishList: state.wishList,
   }));
@@ -12,7 +14,8 @@ const Movie = (props) => {
   const dispatch = useDispatch();
 
   const like = () => {
-    dispatch(likeMovie(props));
+    var result = _.find(wishList, { id: props.id });
+    result ?? dispatch(likeMovie(props));
   };
 
   return (
@@ -31,9 +34,7 @@ const Movie = (props) => {
           <Link to={`/movie/${props.id}`}>
             <FaInfoCircle className="info-icon" />
           </Link>
-          <FaHeart className="like-icon"
-            onClick={like}
-          />
+          <FaHeart className="like-icon" onClick={like} />
         </div>
       </div>
     </div>

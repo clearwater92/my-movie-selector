@@ -18,8 +18,7 @@ const App = () => {
           <Route path="/wishList" exact component={WishList}>
             <Storage />
           </Route>
-          <Route path="/movie/:id" exact component={Detail}>
-          </Route>
+          <Route path="/movie/:id" exact component={Detail}></Route>
         </div>
       </BrowserRouter>
     </>

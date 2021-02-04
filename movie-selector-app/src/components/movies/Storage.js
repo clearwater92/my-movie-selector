@@ -20,7 +20,7 @@ const Storage = () => {
   let wishListFlag = _.size(movieList) > 0 ? true : false;
   return (
     <>
-      <h1>Storage</h1>
+      <h1 className="storage">Storage</h1>
       {wishListFlag ? (
         <WishList movies={movieList} />
       ) : (

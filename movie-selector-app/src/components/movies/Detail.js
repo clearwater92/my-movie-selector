@@ -7,7 +7,6 @@ const Detail = (props) => {
     movies: state.movies,
   }));
   const movie = movies[props.match.params.id];
-  console.log(movie);
 
   const setVoteClass = (vote) => {
     if (vote >= 8) {
@@ -32,7 +31,10 @@ const Detail = (props) => {
         <div className="movie-detail__title">{movie.original_title}</div>
         <div className="movie-detail__release">{movie.release_date}</div>
         <p className="movie-detail__overview">{movie.overview}</p>
-				<FaArrowAltCircleLeft className="back" />
+        <FaArrowAltCircleLeft
+          className={`back ${setVoteClass(movie.vote_average)}`}
+          onClick={props.history.goBack}
+        />
         <span className={`tag ${setVoteClass(movie.vote_average)}`}>
           {movie.vote_average}
         </span>

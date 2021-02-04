@@ -19,7 +19,6 @@ const WishList = (props) => {
 
 const Wish = (props) => {
   const dispatch = useDispatch();
-
   const remove = () => {
     dispatch(deleteMovie(props.id));
   };

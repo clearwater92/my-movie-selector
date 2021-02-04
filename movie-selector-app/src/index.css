@@ -14,8 +14,12 @@ body {
   box-sizing: border-box;
   font-family: 'Nanum Gothic', sans-serif;
   font-weight: 700;
-  padding: 3rem;
+  /* padding: 3rem; */
   background-image: linear-gradient(90deg, #fd605b 0%, #3b1353 100%);
+}
+
+.content {
+  padding: 3rem;
 }
 
 .navi-bar {
@@ -25,6 +29,7 @@ body {
   text-transform: uppercase;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
 }
 
 .menu {
@@ -42,19 +47,37 @@ body {
 
 .menu div a {
   text-decoration: none;
+  color: #fd605b;
 }
 
-.menu div a:visited {
-  color: white;
+.menu div a::after {
+  content: "";
+  display: block;
+  width: 100%;
+  border-bottom: 3px solid black;
+  transform: scaleX(0);
 }
+
+.menu div a:hover::after {
+  transform: scaleX(1);
+  transition: 0.15s;
+}
+
+/* .menu div a:visited {
+  color: white;
+} */
 
 .content {
   margin: 1rem 0;
 }
 
 .search {
+  background-color: transparent;
   border-radius: 5rem;
   padding: 0.5rem 1.5rem;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 3rem;
 }
 
 .search:focus {
@@ -115,6 +138,12 @@ body {
 .like-icon:hover {
   color: #eb1b10;
   transition: 0.15s;
+}
+
+.storage {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  color: white;
 }
 
 .remove-icon {
@@ -201,4 +230,21 @@ body {
 }
 .tag.red {
   color: red;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.back.green:hover {
+  color: green;
+  transition: 0.15s;
+}
+.back.orange:hover {
+  color: orange;
+  transition: 0.15s;
+}
+.back.red:hover {
+  color: red;
+  transition: 0.15s;
 }

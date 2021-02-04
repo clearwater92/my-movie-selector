@@ -4,7 +4,6 @@ import { SEARCH_API, JSON_SERVER_URL } from '../constants';
 
 // 액션 타입
 const SEARCH_MOVIES = 'SEARCH_MOVIES';
-const SEARCH_MOVIE = 'SEARCH_MOVIE';
 const LIKE_MOVIE = 'LIKE_MOVIE';
 const FETCH_WISH_LIST = 'FETCH_WISH_LIST';
 const DELETE_WISH_LIST = 'DELETE_WISH_LIST';
@@ -18,9 +17,7 @@ export const searchMovies = (searchTerm) => async (dispatch) => {
 };
 
 export const likeMovie = (movie) => async (dispatch) => {
-  console.log('movie', movie);
   const response = await wishList.post('/wishList', { ...movie });
-  console.log(response);
   dispatch({ type: LIKE_MOVIE, payload: response.data });
 };
 
