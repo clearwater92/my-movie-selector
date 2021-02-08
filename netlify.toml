@@ -1,2 +1,3 @@
 [build]
-  base    = "movie-selector-app"
+  base = "movie-selector-app"
+	command = "npm run build"
