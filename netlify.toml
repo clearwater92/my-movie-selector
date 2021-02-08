@@ -1,6 +1,6 @@
 [build]
   base = "movie-selector-app"
-	command = "npm run build"
+	CI = "npm run build"
 
 [[redirects]]
   from = "/*"
