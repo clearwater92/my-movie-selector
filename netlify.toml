@@ -1,3 +1,9 @@
 [build]
-  base = "movie-selector-app"
-	command = "npm install"
+  base = "/movie-selector-app"
+	command = "npm run build"
+	base = "/"
+
+[[redirects]]
+  from = "/*"
+	to = "/index.html"
+	status = 200
