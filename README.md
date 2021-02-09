@@ -9,7 +9,7 @@
 <img src="https://user-images.githubusercontent.com/69902446/107358250-80d7a200-6b16-11eb-920b-053d8ef829d7.PNG" width="600px" height="450px"></img>
 ## 상세정보 조회, 위시리스트에 추가
 <img src="https://user-images.githubusercontent.com/69902446/107358438-baa8a880-6b16-11eb-8973-efdffc038495.PNG" width="250px" height="400px"></img>   
-오른쪽 하단에 두 개의 아이콘이 있는데, ⓘ아이콘을 누르면 상세정보를 조회할 수 있고 ❤아이콘을 누르면 위시리스트에 추가됩니다.
+오른쪽 하단에 두 개의 아이콘이 있는데, ⓘ을 누르면 상세정보를 조회할 수 있고 ❤을 누르면 위시리스트에 추가됩니다.
 
 ## 상세정보화면
 <img src="https://user-images.githubusercontent.com/69902446/107360118-de6cee00-6b18-11eb-8c23-72308a781ad7.PNG" width="600px" height="450px"></img>
