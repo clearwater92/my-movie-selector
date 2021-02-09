@@ -4,7 +4,7 @@
 
 ## 메인화면
 ![1](https://user-images.githubusercontent.com/69902446/107357666-b92ab080-6b15-11eb-955c-3af3c5826086.PNG)
-
+<img src="https://user-images.githubusercontent.com/69902446/107357666-b92ab080-6b15-11eb-955c-3af3c5826086.PNG" width="450px" height="300px"></img>
 ## 검색 결과 출력
 ![2](https://user-images.githubusercontent.com/69902446/107358250-80d7a200-6b16-11eb-920b-053d8ef829d7.PNG)
 
