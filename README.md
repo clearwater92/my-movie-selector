@@ -4,3 +4,17 @@
 
 ## 메인화면
 ![1](https://user-images.githubusercontent.com/69902446/107357666-b92ab080-6b15-11eb-955c-3af3c5826086.PNG)
+
+## 검색 결과 출력
+![2](https://user-images.githubusercontent.com/69902446/107358250-80d7a200-6b16-11eb-920b-053d8ef829d7.PNG)
+
+## 상세정보 조회, 위시리스트에 추가
+![3](https://user-images.githubusercontent.com/69902446/107358438-baa8a880-6b16-11eb-8973-efdffc038495.PNG)
+오른쪽 하단에 두 개의 아이콘이 있는데, 왼쪽의 i 아이콘을 누르면 상세정보를 조회할 수 있고 오른쪽 하트모양을 누르면 위시리스트에 추가됩니다.
+
+## 상세정보화면
+![4](https://user-images.githubusercontent.com/69902446/107360118-de6cee00-6b18-11eb-8c23-72308a781ad7.PNG)
+
+## 위시리스트
+![5](https://user-images.githubusercontent.com/69902446/107360448-4ae7ed00-6b19-11eb-9252-e6b5359726dd.PNG)
+메뉴 바를 통하여 위시리스트에 추가된 영화를 확인할 수 있습니다.
