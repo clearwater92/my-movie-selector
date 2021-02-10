@@ -153,11 +153,40 @@ body {
   transition: 0.15s;
 }
 
-.storage {
+.storage__title {
+  margin-left: 1rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.storage__title__icon {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.storage__title__text {
+  text-transform: uppercase;
+}
+
+.storage__empty-message {
+  color: white;
+  text-transform: uppercase;
+}
+/* .storage {
   margin-left: 1rem;
   text-transform: uppercase;
   color: white;
 }
+
+.storage-icon {
+  display: inline;
+  width: 2rem;
+  height: 2rem;
+} */
 
 .remove-icon {
   color: gray;

@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import _, { upperCase } from 'lodash';
+import { FaShoppingBag } from 'react-icons/fa';
+
 import { fetchWishList } from '../../modules/movie';
 import WishList from '../movies/WishList';
 import { useEffect } from 'react';
@@ -20,11 +22,14 @@ const Storage = () => {
   let wishListFlag = _.size(movieList) > 0 ? true : false;
   return (
     <>
-      <h1 className="storage">Storage</h1>
+    <div className="storage__title">
+      <FaShoppingBag className="storage__title__icon" />
+      <h1 className="storage__title__text">Storage</h1>
+    </div>
       {wishListFlag ? (
         <WishList movies={movieList} />
       ) : (
-        <h2 style={{ textTransform: upperCase }}>
+        <h2 className="storage__empty-message">
           Please add your favorite movies.
         </h2>
       )}
