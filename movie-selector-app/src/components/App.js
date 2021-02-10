@@ -1,4 +1,5 @@
 import { BrowserRouter, Route } from 'react-router-dom';
+import {BiCameraMovie} from 'react-icons/bi';
 import Navigation from './movies/Navigation';
 import Search from './movies/Search';
 import MovieList from './movies/MovieList';
@@ -19,6 +20,7 @@ const App = () => {
             <Storage />
           </Route>
           <Route path="/movie/:id" exact component={Detail}></Route>
+          <BiCameraMovie className="main-icon"/>
         </div>
       </BrowserRouter>
     </>
