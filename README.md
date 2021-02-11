@@ -7,8 +7,6 @@
 
 리액트앱으로 바로가기 ➡ [MyMovieSelector](https://elated-saha-bee70d.netlify.app/)
 
-## 기술스택
-
 ## 메인화면
 <img src="https://user-images.githubusercontent.com/69902446/107628395-e9a05500-6ca3-11eb-9cbc-b580d340eba2.PNG" width="600px" height="450px"></img>
 ## 검색 결과 출력
